@@ -20,10 +20,7 @@ class NotifyController extends Base
     public function virtualPhoneSecretReport()
     {
         $content = file_get_contents("php://input");
-        file_put_contents(APP_PATH.'../../statics/log1.json',$content);
         $content = json_decode($content, true);
-        file_put_contents(APP_PATH.'../../statics/log2.json',$content);
-
         $AliyunPhoneService = new AliyunPhoneService();
         $AliyunPhoneBindModel = new AliyunPhoneBindModel();
         foreach ($content as $k => $v){
@@ -38,7 +35,6 @@ class NotifyController extends Base
                 $AliyunPhoneService->unbindSubscription($AliyunPhoneBindFind['subs_id'],$AliyunPhoneBindFind['secret_no']);
             }
         }
-
         $res['code'] = 0;
         $res['msg'] = '成功';
         $this->ajaxReturn($res);
