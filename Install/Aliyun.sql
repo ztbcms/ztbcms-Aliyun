@@ -47,6 +47,9 @@ CREATE TABLE `cms_aliyun_phone_bind`  (
   `add_time` int(15) UNSIGNED NULL DEFAULT NULL COMMENT '绑定时间',
   `edit_time` int(15) UNSIGNED NULL DEFAULT NULL COMMENT '最后编辑时间',
   `bind_status` int(15) UNSIGNED NULL DEFAULT NULL COMMENT '绑定状态 1已绑定  2绑定失败 3已解绑',
+  `un_bind_time` int(15) UNSIGNED NULL DEFAULT 0 COMMENT '解除绑定时间',
+  `phone_no_a` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '号码A',
+  `phone_no_b` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '号码B',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
